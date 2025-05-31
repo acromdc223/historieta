@@ -1,0 +1,8 @@
+.panel{
+    display: none;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0.3);
+    animation: fadein 0.5 ease;
+}
