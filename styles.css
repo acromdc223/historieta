@@ -1,0 +1,125 @@
+.panel{
+    display: none;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0.3);
+    animation: fadein 0.5 ease;
+}
+
+body, h1, h2, p{
+    margin: 0;
+    padding: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(39, 139, 139);
+    color: aqua;
+    text-align: center;
+    padding: 20px;
+}
+
+/* estilo de titulo mejorado*/
+header h1{
+    font-size: 3rem; /*tamaño mas grande para tener un mayor inpacto*/
+    text-transform: uppercase;
+    letter-spacing: 4px; /* espacio entre palabras*/
+    margin: 0;
+    animation: glow 1.5s infinite alternate;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(90dg, #18ffc57a #18c9ff7a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /*efecto degradado en el texto*/
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1); /*sombreado para mayor profundidad*/
+}
+
+/*fondo animado debajo del titulo*/
+header::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50);
+    width: 120%;
+    height: 150%;
+    background: radial-gradient(circle, #000000(255, 255, 255, 0.2)0%, transform 70%);
+    z-index: 0;
+    animation: pulse 6s infinite;
+    border-radius: 50%;
+}
+
+/*animacion de pulso*/
+@keyframes pulse {
+0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.6;
+}
+100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+}
+
+p{
+    color: #4a4df8;
+}
+
+h1{
+    font-size: 2rem;
+    color: aqua;
+}
+
+main{
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.panel img{
+    width: 60%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.panel h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#panel1:checked~#content-panel1,
+#panel2:checked~#content-panel2,
+#panel3:checked~#content-panel3,
+#panel4:checked~#content-panel4
+{
+    display: block;
+}
+
+/* animacion*/
+@keyframes fadein{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+
+}
+
+/*ocultar los controladores*/
+input[type=radio]{
+    display: none;
+}
+
+.button{
+    background-color: rgb(66, 168, 182);
+    padding: 10xp;
+    border-radius: 20%;
+    color: rgb(134, 91, 34);
+    cursor: pointer;
+    text-decoration: none;
+}
